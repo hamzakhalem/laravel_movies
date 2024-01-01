@@ -35,7 +35,12 @@
             <div class="flex item-center">
                 <div class="relative">
                     <input type="text" class="bg-gray-800 rounded-full w-64 px-4 py-1 pl-8 focus:outline-none 
-                        focus:shadow-outline" placeholder="Search..">
+                        focus:shadow-" placeholder="Search..">
+                </div>
+                <div class="ml-4">
+                    <a href="#">
+                        <img src="/img/avatar.jpg" alt="avatar" class="rounded-full w-8 h-8">
+                    </a>
                 </div>
             </div>
         </div>
