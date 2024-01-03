@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MoviesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,5 +12,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::view('/', 'index');
-Route::view('/movie', 'show');
+
+Route::get('/',[ MoviesController::class, 'index'])->name('movies.index');
+Route::get('/movies/{movie}', 'MoviesController@show')->name('movies.show');
+
