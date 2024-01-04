@@ -9,8 +9,11 @@ class MoviesController extends Controller
 {
     //
     public function index(){
-        $popularmovies = Http::get('https://api.themoviedb.org/3/movie/popular')->json();
-        dd($popularmovies);
-        return view('index');
+        $popularmovies = Http::withToken(config('services.tmdb.token'))
+        ->get('https://api.themoviedb.org/3/movie/popular')->json()['results'];
+        // var_dump($popularmovies);
+        return view('index', [
+            'popularmovies' => $popularmovies
+        ]);
     }
 }
