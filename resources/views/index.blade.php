@@ -22,7 +22,10 @@
                             <span>{{ \Carbon\Carbon::parse($item['release_date'])->format('M d, Y') }}</span>
                         </div>
                         <div class="text-gray-400 text-sm">
-                            Action, Thirller, Comedy
+                            @foreach ($item['genre_ids'] as $genid)
+                                {{ $genres->get($genid) }}@if(!$loop->last), @endif
+                                
+                            @endforeach
                         </div>
                     </div>
                 </div>
