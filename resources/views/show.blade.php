@@ -13,10 +13,13 @@
                 <span class="mx-2">|</span>
                 <span>Feb 20, 2020</span>
                 <span class="mx-2">|</span>
-                <span class="mx-2">Action, Thriller, Drama</span>
+                <span class="mx-2"> 
+                    @foreach ($movie['genres'] as $gen)
+                    {{ $gen['name'] }}@if(!$loop->last), @endif 
+                @endforeach</span>
             </div>
             <p class="text-gray-300 mt-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis numquam praesentium quod voluptate hic. Non et ipsum quae, nihil excepturi repellendus molestias pariatur facere reiciendis dicta consequuntur quis aspernatur fugit odio aut inventore neque minima similique in! Delectus cumque animi hic ad eius deleniti tenetur provident sit? Quasi, sint quos.
+                {{ $movie['overview'] }}
             </p>
             <div class="mt-12">
                 <h4 class="text-white text-semibold">

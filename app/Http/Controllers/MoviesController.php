@@ -33,6 +33,14 @@ class MoviesController extends Controller
     public function show($id){
         $movie = Http::withToken(config('services.tmdb.token'))
             ->get('https://api.themoviedb.org/3/movie/'.$id)->json();
-        return view('show', compact('movie'));
+            
+        $genres = Http::withToken(config('services.tmdb.token'))
+            ->get('https://api.themoviedb.org/3/genre/movie/list')
+            ->json()['genres'];
+
+        $genres = collect($genres)->mapWithKeys(function($genre){
+                return [$genre['id'] => $genre['name']];
+            });
+        return view('show',['movie'=> $movie, 'genres' => $genres]);
     }
 }
