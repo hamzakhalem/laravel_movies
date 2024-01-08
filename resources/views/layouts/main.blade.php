@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie Land</title>
     @vite('resources/css/app.css')
+    @livewireStyles
 </head>
 <body class="font-sans bg-gray-900 text-white">
     <nav class="border-b border-gray-800 ">
@@ -33,10 +34,7 @@
                 </li>
             </ul>
             <div class="flex item-center">
-                <div class="relative">
-                    <input type="text" class="bg-gray-800 rounded-full w-64 px-4 py-1 pl-8 focus:outline-none 
-                        focus:shadow-" placeholder="Search..">
-                </div>
+                <livewire:search-dropdown /> 
                 <div class="ml-4">
                     <a href="#">
                         <img src="/img/avatar.jpg" alt="avatar" class="rounded-full w-8 h-8">
@@ -46,5 +44,6 @@
         </div>
     </nav>
     @yield('content')
+    @livewireScripts
 </body>
 </html>
