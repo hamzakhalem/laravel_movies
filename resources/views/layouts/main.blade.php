@@ -44,6 +44,7 @@
         </div>
     </nav>
     @yield('content')
+   
     @livewireScripts
 </body>
 </html>
