@@ -13,10 +13,7 @@
             <span>{{ $item['release_date']}}</span>
         </div>
         <div class="text-gray-400 text-sm">
-            @foreach ($item['genre_ids'] as $genid)
-                {{ $genres->get($genid) }}@if(!$loop->last), @endif
-                
-                @endforeach
+            {{ $item['genres'] }}
         </div>
     </div>
 </div>

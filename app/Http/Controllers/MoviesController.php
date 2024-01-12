@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\ViewModels\MoviesViewModel;
+use App\ViewModels\MovieViewModel;
 class MoviesController extends Controller
 {
     //
@@ -36,6 +37,7 @@ class MoviesController extends Controller
         $genres = collect($genres)->mapWithKeys(function($genre){
                 return [$genre['id'] => $genre['name']];
             });
-        return view('show',['movie'=> $movie, 'genres' => $genres]);
+        $ourview = new MovieViewModel($movie);
+        return view('show',$ourview);
     }
 }
