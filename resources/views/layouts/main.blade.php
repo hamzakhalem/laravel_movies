@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li class="ml-16">
-                    <a href="#" class="hover:text-gray-300">
+                    <a href="{{ route("movies.index") }}" class="hover:text-gray-300">
                         Movies
                     </a>
                 </li>
@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="ml-6">
-                    <a href="#" class="hover:text-gray-300">
+                    <a href="{{ route("actors.index") }}" class="hover:text-gray-300">
                         Actors
                     </a>
                 </li>

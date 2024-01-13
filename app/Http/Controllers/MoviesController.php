@@ -22,7 +22,7 @@ class MoviesController extends Controller
             ->json()['genres'];
 
         $ourview = new MoviesViewModel($popularmovies, $nowplayingmovies, $genres); 
-        return view('index', $ourview);
+        return view('movies.index', $ourview);
     }
 
 
@@ -38,6 +38,6 @@ class MoviesController extends Controller
                 return [$genre['id'] => $genre['name']];
             });
         $ourview = new MovieViewModel($movie);
-        return view('show',$ourview);
+        return view('movies.show',$ourview);
     }
 }
