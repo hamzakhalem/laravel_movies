@@ -29,4 +29,14 @@ class ActorsViewModel extends ViewModel
             ]);
         });
     }
+
+    public function previous()
+    {
+        return $this->page > 1 ? $this->page - 1 : null;
+    }
+
+    public function next()
+    {
+        return $this->page < 500 ? $this->page + 1 : null;
+    }
 }
