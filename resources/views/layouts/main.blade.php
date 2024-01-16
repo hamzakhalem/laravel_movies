@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li class="ml-6">
-                    <a href="#" class="hover:text-gray-300">
+                    <a href="{{ route('tv.index') }}" class="hover:text-gray-300">
                         TV Shows
                     </a>
                 </li>
